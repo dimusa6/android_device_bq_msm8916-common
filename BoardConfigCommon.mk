@@ -29,8 +29,8 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a53
 
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+BOARD_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+BOARD_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Kernel
 TARGET_KERNEL_ARCH := arm
@@ -129,7 +129,7 @@ TARGET_RECOVERY_FSTAB := device/bq/msm8916-common/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SUPPRESS_EMMC_WIPE := true
-COMMON_GLOBAL_CFLAGS += -DRECOVERY_FONT='"roboto_15x24.h"'
+BOARD_GLOBAL_CFLAGS += -DRECOVERY_FONT='"roboto_15x24.h"'
 
 # RIL
 TARGET_RIL_VARIANT := caf
@@ -143,6 +143,8 @@ BOARD_USES_QC_TIME_SERVICES := true
 
 # Widevine
 BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
+# Camera
+TARGET_NEEDS_TEXT_RELOCATIONS := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
