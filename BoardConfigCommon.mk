@@ -29,8 +29,8 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a53
 
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+BOARD_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+BOARD_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x3F ehci-hcd.park=3 vmalloc=400M androidboot.bootdevice=7824900.sdhci utags.blkdev=/dev/block/bootdevice/by-name/utags utags.backup=/dev/block/bootdevice/by-name/utagsBackup movablecore=160M androidboot.selinux=permissive
@@ -116,7 +116,7 @@ TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Memory
-MALLOC_IMPL := dlmalloc
+MALLOC_SVELTE := true
 
 # Power
 #TARGET_POWERHAL_VARIANT := qcom
@@ -132,7 +132,7 @@ TARGET_RECOVERY_FSTAB := device/bq/msm8916-common/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SUPPRESS_EMMC_WIPE := true
-COMMON_GLOBAL_CFLAGS += -DRECOVERY_FONT='"roboto_15x24.h"'
+BOARD_GLOBAL_CFLAGS += -DRECOVERY_FONT='"roboto_15x24.h"'
 
 # RIL
 TARGET_RIL_VARIANT := caf
